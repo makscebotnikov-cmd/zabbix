@@ -29,7 +29,10 @@ sed -i 's/# DBPassword=/DBPassword=****/g' /etc/zabbix/zabbix_server.conf<img wi
 
 ```
 ![Снимок 11]<img width="1280" height="800" alt="11" src="https://github.com/user-attachments/assets/7347b057-f682-43a7-9f17-74ef82966a63" />
-
+![Снимок 12]<img width="1280" height="800" alt="12" src="https://github.com/user-attachments/assets/6ee9b1d5-043e-4f4f-9a58-3b106e525e29" />
+![Снимок 13]<img width="1280" height="800" alt="13" src="https://github.com/user-attachments/assets/7b5d222f-dd78-44e1-b026-042eb4e2121b" />
+![Снимок 14]<img width="1280" height="800" alt="14" src="https://github.com/user-attachments/assets/3008440c-0c02-4cf0-b60e-932140e45036" />
+![Снимок 15]<img width="1280" height="722" alt="15" src="https://github.com/user-attachments/assets/39b2ab91-fa01-41c8-bcf0-74978c336b7f" />
 
 
 ## Задание 2  
@@ -49,19 +52,19 @@ sed -i 's/# DBPassword=/DBPassword=****/g' /etc/zabbix/zabbix_server.conf<img wi
 ## Решение 2
 
 ```
-sudo -s
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
-dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
+swget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4%2Bdebian11_all.deb 
+dpkg -i zabbix-release_6.0-4+debian11_all.deb
 apt update
-apt install zabbix-agent
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent
+sudo apt install zabbix-agent -y
+sudo systemctl restart zabbix-agent 
+sudo systemctl enable zabbix-agent
+sudo nano /etc/zabbix/zabbix_agentd.conf
+sudo systemctl restart zabbix-agent
+sed -i 's/Server=127.0.0.1/Server=192.168.0.138'/g' /etc/zabbix/zabbix_server.conf
 
 ```
-
-
-![Снимок 211](https://github.com/user-attachments/assets/6892d059-7316-4b90-baf9-fb82adb8add5)
-
-![Снимок 210](https://github.com/user-attachments/assets/7c6d7801-d789-447f-8f1b-0a4c394b5225)
-
-![Снимок 212](https://github.com/user-attachments/assets/1b801554-fe8d-43d5-9338-13bf4b6f1c52)
+![Снимок 21]<img width="1280" height="800" alt="21" src="https://github.com/user-attachments/assets/16eaa0d9-2fef-4f47-ad3d-ac9123db1468" />
+![Снимок 22]<img width="1280" height="800" alt="22" src="https://github.com/user-attachments/assets/bf716b60-ecd9-43e3-91d1-70942e016679" />
+![Снимок 23]<img width="1280" height="800" alt="23" src="https://github.com/user-attachments/assets/112ca692-f83e-4514-aaa1-dfb7a42958a0" />
+![Снимок 24]<img width="1280" height="800" alt="24" src="https://github.com/user-attachments/assets/d851efaf-b58b-4986-a6f4-7d17145a04f6" />
+![Снимок 25]<img width="1280" height="715" alt="25" src="https://github.com/user-attachments/assets/cf30feab-5dc1-405d-b8ea-c3a2534cea48" />
